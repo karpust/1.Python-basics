@@ -82,11 +82,14 @@
 # 6-й день: 3,22
 # Ответ: на 6-й день спортсмен достиг результата — не менее 3 км."""
 #
-# a = int(input("Enter result at first day: "))
-# b = int(input("Enter result at last day: "))
-# day = 1
-# inc = a * 0.1
-# while a < b:
-#     a += inc
-#     day += 1
-# print(f"At {day} day the gay achieved the result - not less than {b} km")
+a = int(input("Enter result at first day: "))
+b = int(input("Enter result at last day: "))
+day = 1
+while True:
+    if a < b:
+        inc = a * 0.1
+        a += inc
+        day += 1
+    else:
+        break
+print(f"At {day} day the gay achieved the result - not less than {b} km")
