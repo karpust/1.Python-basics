@@ -3,12 +3,11 @@
 
 
 def sum_of_max(arg_1, arg_2, arg_3):
-    lst = [arg_1, arg_2, arg_3]
-    lst.remove(min(lst))
+    lst = sorted([arg_1, arg_2, arg_3], reverse=True)
+    lst.pop()
     return sum(lst)
 
 
-print(sum_of_max(arg_1=2, arg_2=3, arg_3=10))
-
+print(sum_of_max(arg_1=4, arg_2=0, arg_3=15))
 
 

@@ -16,11 +16,11 @@ def my_func_1(x, y):
 
 
 def my_func_2(x, y):
-    c, d = 1, 1
+    c = 1
     if y < 0:
         for i in range(abs(y)):
             c *= x
-        return d / c
+        return 1 / c
     if y > 0:
         for i in range(y):
             c *= x

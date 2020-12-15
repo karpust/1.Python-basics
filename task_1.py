@@ -6,13 +6,13 @@ a = int(input("Enter number a: "))
 b = int(input("Enter number b: "))
 
 
-def division(n, m):
+def division(num, den):
     try:
-        n / m
+        num / den
     except ZeroDivisionError:
         print("You cannot divide by zero.")
-        m = int(input("Enter a number other than zero: "))
-    return n / m
+        den = int(input("Enter a number other than zero: "))
+    return num / den
 
 
 print(division(a, b))

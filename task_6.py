@@ -22,6 +22,7 @@ def cap_string(s):
     return " ".join(list_of_str)
 
 
+# print(cap_word(input_string1))
 print(cap_string(input_string2))
 
 

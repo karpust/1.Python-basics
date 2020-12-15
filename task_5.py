@@ -8,13 +8,15 @@
 завершить программу."""
 
 all_nums = []
+break_key = "$"
+
 while True:
-    nums = (input("Enter space separated numbers, to exit press <$> "))
+    nums = (input(f"Enter space separated numbers, to exit press {break_key}: "))
     num_lst = nums.split(" ")
     all_nums.extend(num_lst)
     if nums is None:
         continue
-    elif "$" in nums:
-        all_nums.remove("$")
+    elif break_key in nums:
+        all_nums.remove(break_key)
         break
 print(sum([int(i) for i in all_nums]))
