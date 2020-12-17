@@ -1,19 +1,15 @@
-"""1. Реализовать функцию, принимающую два числа (позиционные аргументы)
-и выполняющую их деление. Числа запрашивать у пользователя,
-предусмотреть обработку ситуации деления на ноль."""
+"""1. Реализовать скрипт, в котором должна быть предусмотрена функция расчета
+заработной платы сотрудника. В расчете необходимо использовать формулу:
+(выработка в часах * ставка в час) + премия. Для выполнения расчета для
+конкретных значений необходимо запускать скрипт с параметрами."""
 
-a = int(input("Enter number a: "))
-b = int(input("Enter number b: "))
-
-
-def division(num, den):
-    try:
-        num / den
-    except ZeroDivisionError:
-        print("You cannot divide by zero.")
-        den = int(input("Enter a number other than zero: "))
-    return num / den
+hours = 8
+rate = 1000
+prize = 20000
 
 
-print(division(a, b))
+def get_salary(h, r, p):
+    return rate * hours + prize
 
+
+print(get_salary(hours, rate, prize))
