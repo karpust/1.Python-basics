@@ -6,6 +6,19 @@
 Пример исходного списка: [2, 2, 2, 7, 23, 1, 44, 44, 3, 2, 10, 7, 4, 11].
 Результат: [23, 1, 3, 10, 4, 11]"""
 
-sours = [2, 2, 2, 7, 23, 1, 44, 44, 3, 2, 10, 7, 4, 11]
+sours = [2, 2, 2, 7, 23, 23, 1, 44, 44, 3, 2, 10, 7, 4, 11]
 print([el for el in sours if sours.count(el) < 2])
+
+
+def count_func(n, lst):
+    count = 0
+    for i in range(len(lst)):
+        if sours[i] == n:
+            count += 1
+    return count
+
+
+print([el for el in sours if count_func(el, sours) < 2])
+
+
 

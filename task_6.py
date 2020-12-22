@@ -18,6 +18,7 @@ for i in iter_coun:
     if i == 10:
         break
 
+
 lst = []
 for i in iter_cyc:
     lst.append(i)
