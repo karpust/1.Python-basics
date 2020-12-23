@@ -1,22 +1,12 @@
-"""1. Реализовать скрипт, в котором должна быть предусмотрена функция расчета
-заработной платы сотрудника. В расчете необходимо использовать формулу:
-(выработка в часах * ставка в час) + премия. Для выполнения расчета для
-конкретных значений необходимо запускать скрипт с параметрами."""
-from sys import argv
-
+"""1. Создать программно файл в текстовом формате, записать в него построчно данные,
+вводимые пользователем. Об окончании ввода данных свидетельствует пустая строка."""
+from os import remove
+remove("/media/sf_D_DRIVE/karpust/Github/1.Python-basics/file_5.txt")
+file = open('/home/n/Documents/file_1.txt', 'x')
 while True:
-    try:
-        name_scr, rate, hours, prize = argv
-    except ValueError:
-        if len(argv) < 4:
-            print(f"The number of passed values less then expected (4), were given:{argv}")
-            break
-        else:
-            print(f"The number of passed values more then expected (4), were given:{argv}")
-            while len(argv) > 4:
-                argv.pop()
-    a = [int(argv[i]) for i in range(len(argv)) if i > 0]
-    r, h, p = a
-    print(r * h + p)
-    break
+    c = file.write(input("Enter data: ") + "\n") - 1
+    if c == 0:
+        break
+file.close()
+                                   """ВСЕ НЕ ТАК Я СЕГОДНЯ ВСЕ ИСПРАВЛЮ, НЕ УСПЕВАЮ.."""
 
