@@ -1,8 +1,12 @@
 """2. Создать текстовый файл (не программно), сохранить в нем несколько строк,
 выполнить подсчет количества строк, количества слов в каждой строке.
 """
-with open("/home/n/Documents/file_1.txt", 'r') as file:
-    content = file.read()
+from os.path import join
+
+
+p = join(".", "fil_1.txt")
+with open(p) as file_r:
+    content = file_r.read()
     content_lst = content.split("\n")
     count = 0
     for i, el in enumerate(content_lst):
@@ -12,4 +16,3 @@ with open("/home/n/Documents/file_1.txt", 'r') as file:
             count += 1
     print(f"file include {count} strings")
 
-                            """ВСЕ НЕ ТАК Я СЕГОДНЯ ВСЕ ИСПРАВЛЮ, НЕ УСПЕВАЮ.."""

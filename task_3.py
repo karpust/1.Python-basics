@@ -6,7 +6,11 @@
 Иванов 23543.12
 Петров 13749.32
 """
-with open("/home/n/Documents/file_2.txt", 'r') as file:
+from os.path import join
+
+
+p = join(".", "fil_3.txt")
+with open(p) as file:
     all_salary, count = 0, 0
     for line in file:
         lst = line.split(" ")
@@ -16,4 +20,4 @@ with open("/home/n/Documents/file_2.txt", 'r') as file:
         count += 1
     print('average salary is ' + '%.2f' % (all_salary/count))
 
-                                        """ВСЕ НЕ ТАК Я СЕГОДНЯ ВСЕ ИСПРАВЛЮ, НЕ УСПЕВАЮ.."""
+

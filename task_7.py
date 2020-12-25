@@ -11,3 +11,28 @@
 [{"firm_1": 5000, "firm_2": 3000, "firm_3": 1000}, {"average_profit": 2000}]
 Подсказка: использовать менеджер контекста.
 """
+from os.path import join
+import json
+
+
+firms = dict()
+av_profit = dict()
+
+p_1 = join(".", "fil_7.txt")
+p_2 = join(".", "fil_71.json")
+
+with open(p_1) as file:
+    for line in file:
+        s = line.rstrip()
+        s = s.split("   ")
+        firms[s[0]] = int(s[2]) - int(s[3])
+        sum_profit, count = 0, 0
+        for k, v in firms.items():
+            if v >= 0:
+                sum_profit += v
+            count += 1
+        av_profit["average_profit"] = sum_profit // 2
+    lst = [firms, av_profit]
+with open(p_2, "w") as output_file:
+    json.dump(lst, output_file)
+print(type(output_file))

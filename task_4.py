@@ -7,16 +7,20 @@ Four — 4
 При этом английские числительные должны заменяться на русские. Новый блок строк должен
 записываться в новый текстовый файл.
 """
+from os.path import join
+
+
+p = join(".", "fil_4.txt")
+p2 = join(".", "fil_41.txt")
 trans_lst = ["раз", "два", "три", "четыре"]
-with open("/home/n/Documents/file_3.txt", 'r') as sours_file:
-    content = sours_file.read()
-    sours_lst = content.split("\n")
-    for el in sours_file:
+count = 0
+with open(p) as sours_file:
+    with open(p2, 'w') as file_x:
+        for line in sours_file:
+            c = line.split(" ")
+            c[0] = trans_lst[count]
+            print(" ".join(c), file=file_x, end="")
+            count += 1
 
-        lst = line.split(" ")
-        lst[0] = trans_lst[0]
-        print(lst)
-
-        """ВСЕ НЕ ТАК Я СЕГОДНЯ ВСЕ ИСПРАВЛЮ, НЕ УСПЕВАЮ.."""
 
 
