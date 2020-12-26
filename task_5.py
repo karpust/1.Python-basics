@@ -1,17 +1,47 @@
-"""5. Создать (программно) текстовый файл, записать в него программно набор чисел,
-разделенных пробелами. Программа должна подсчитывать сумму чисел в файле
-и выводить ее на экран."""
+"""5. Реализовать класс Stationery (канцелярская принадлежность). Определить в нем атрибут title (название)
+и метод draw (отрисовка). Метод выводит сообщение “Запуск отрисовки.” Создать три дочерних класса Pen (ручка),
+Pencil (карандаш), Handle (маркер). В каждом из классов реализовать переопределение метода draw.
+Для каждого из классов методы должен выводить уникальное сообщение. Создать экземпляры классов и проверить,
+что выведет описанный метод для каждого экземпляра."""
 
-from os.path import join
+
+class Stationary():
+    def __init__(self, title):
+        self.title = title
+
+    def draw(self):
+        print(f"Start drawing {self.title}.")
 
 
-p = join(".", "fil_5.txt")
+class Pen(Stationary):
+    def __init__(self, title):
+        super().__init__(title)
 
-with open(p, 'w') as file_x:
-    for i in range(1, 25, 3):
-        print(i, file=file_x, end=" ")
-with open(p) as file_x:
-    for line in file_x:
-        c = line.split(" ")
-        print(sum(float(i) for i in c if i))
+    def draw(self):
+        print(f"Start drawing {self.title} with a pen.")
 
+
+class Pencil(Stationary):
+    def __init__(self, title):
+        super().__init__(title)
+
+    def draw(self):
+        print(f"Start drawing {self.title} with a pencil.")
+
+
+class Handle(Stationary):
+    def __init__(self, title):
+        super().__init__(title)
+
+    def draw(self):
+        print(f"Start drawing {self.title} with a handle.")
+
+
+h_1 = Handle("dolphins")
+h_1.draw()
+
+pnc_1 = Pencil("the sea")
+pnc_1.draw()
+
+pn_1 = Pen("the grass")
+pn_1.draw()

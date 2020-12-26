@@ -1,18 +1,21 @@
-"""2. Создать текстовый файл (не программно), сохранить в нем несколько строк,
-выполнить подсчет количества строк, количества слов в каждой строке.
-"""
-from os.path import join
+"""2. Реализовать класс Road (дорога), в котором определить атрибуты:
+length (длина), width (ширина). Значения данных атрибутов должны передаваться
+при создании экземпляра класса. Атрибуты сделать защищенными. Определить метод
+расчета массы асфальта, необходимого для покрытия всего дорожного полотна.
+Использовать формулу: длина * ширина * масса асфальта для покрытия одного кв
+метра дороги асфальтом, толщиной в 1 см * число см толщины полотна. Проверить работу метода.
+Например: 20м * 5000м * 25кг * 5см = 12500 т"""
 
 
-p = join(".", "fil_1.txt")
-with open(p) as file_r:
-    content = file_r.read()
-    content_lst = content.split("\n")
-    count = 0
-    for i, el in enumerate(content_lst):
-        if el:
-            num_words = len(el.split(" "))
-            print(f"string {i+1} include {num_words} word(s)")
-            count += 1
-    print(f"file include {count} strings")
+class Road:
+    def __init__(self, length, width):
+        self._length = length
+        self._width = width
 
+    def mass(self):
+        mass = self._length * self._width * 25 * 5 // 1000
+        print(mass)
+
+
+m = Road(20, 5000)
+m.mass()
