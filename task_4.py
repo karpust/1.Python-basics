@@ -16,7 +16,8 @@ class Car():
         self.name = name
         self.is_police = is_police
 
-    def go(self):
+    def go(self, speed):
+        self.speed = speed
         print(f"The car {self.color} {self.name} is running")
 
     def stop(self):
@@ -63,7 +64,7 @@ class SportCar(Car):
 
 
 t_1 = TownCar(70, "red", "Chevrolet", False)
-t_1.go()
+t_1.go(30)
 t_1.turn("left")
 t_1.show_speed()
 t_1.stop()
@@ -73,8 +74,8 @@ print(t_1.color)
 print(t_1.speed)
 print(t_1.is_police)
 
-w_1 = WorkCar(80, "dark blue", "Daewoo Nexia", False)
-w_1.go()
+w_1 = WorkCar(80, "dark blue", "Daewoo", False)
+w_1.go(40)
 w_1.turn("left")
 w_1.show_speed()
 w_1.stop()
@@ -85,10 +86,12 @@ print(w_1.speed)
 print(w_1.is_police)
 
 p_1 = PoliceCar(100, "white", "Ford", True)
-p_1.go()
+p_1.go(60)
 p_1.turn("left")
 p_1.show_speed()
 p_1.stop()
+p_1.show_speed()
+p_1.go(40)
 p_1.show_speed()
 print(p_1.name)
 print(p_1.color)

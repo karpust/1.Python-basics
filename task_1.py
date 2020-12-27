@@ -21,11 +21,11 @@ class TrafficLight:
         for el in color_lst:
             if next(cyc) == self.__color:
                 print(self.__color, color_dict[self.__color])
-                for i in range(5):
+                for i in range(8):
                     c = next(cyc)
                     print(c, color_dict[c])
 
 
-g = TrafficLight("red")
+g = TrafficLight("green")
 g.running()
 
