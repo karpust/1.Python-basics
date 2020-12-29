@@ -7,3 +7,26 @@
 класса Matrix (двух матриц). Результатом сложения должна быть новая матрица.
 Подсказка: сложение элементов матриц выполнять поэлементно — первый элемент первой строки
 первой матрицы складываем с первым элементом первой строки второй матрицы и т.д."""
+
+lss = [[1, 2, 3],
+       [4, 5, 6],
+       [7, 8, 9]]
+
+
+class Matrix():
+    def __init__(self, mat):
+        self.mat = mat
+
+    def __str__(self):
+        s = ""
+        for i in range(len(self.mat)):
+            in_mat = self.mat[i]
+            for n in range(len(in_mat)):
+                s += str(in_mat[n])
+            s += "\n"
+        return s
+
+    def __add__(self):
+
+m = Matrix(lss)
+print(m)
