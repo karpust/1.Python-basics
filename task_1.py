@@ -8,9 +8,11 @@
 Подсказка: сложение элементов матриц выполнять поэлементно — первый элемент первой строки
 первой матрицы складываем с первым элементом первой строки второй матрицы и т.д."""
 
-lss = [[1, 2, 3],
-       [4, 5, 6],
-       [7, 8, 9]]
+lst_1 = [[1, 2, 3],
+         [4, 5, 6],
+         [7, 8, 9]]
+
+lst_2 = [[10, 20, 30], [40, 50, 60], [70, 80, 90]]
 
 
 class Matrix():
@@ -20,13 +22,26 @@ class Matrix():
     def __str__(self):
         s = ""
         for i in range(len(self.mat)):
-            in_mat = self.mat[i]
-            for n in range(len(in_mat)):
-                s += str(in_mat[n])
+            for n in range(len(self.mat[i])):
+                s += str(self.mat[i][n]) + " "
             s += "\n"
         return s
 
-    def __add__(self):
+    def __add__(self, other):
+        lst_out = []
+        for i in range(len(self.mat)):
+            lst_in = []
+            for n in range(len(self.mat[i])):
+                lst_in.append(self.mat[i][n] + other.mat[i][n])
+            lst_out.append(lst_in)
+        return Matrix(lst_out)
 
-m = Matrix(lss)
-print(m)
+
+m_1 = Matrix(lst_1)
+m_2 = Matrix(lst_2)
+print(m_1)
+print(m_2)
+sum_m = m_1 + m_2
+print(sum_m)
+print((type(sum_m)))
+# print(sum_m.mat)

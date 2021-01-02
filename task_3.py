@@ -22,3 +22,52 @@
 Или, количество ячеек клетки равняется 15, количество ячеек в ряду — 5. Тогда метод make_order()
 вернет строку: *****\n*****\n*****.
 Подсказка: подробный список операторов для перегрузки доступен по ссылке."""
+
+# from abc import ABC, abstractmethod
+
+
+class Cell():
+    def __init__(self, num):
+        self.num = num
+
+    def __add__(self, other):
+        return Cell(self.num + other.num)
+
+    def __sub__(self, other):
+        if self.num - other.num <= 0:
+            print("The number of cells is not more then zero")
+        return Cell(self.num - other.num)
+
+    def __mul__(self, other):
+        return Cell(self.num * other.num)
+
+    def __truediv__(self, other):
+        return Cell(round(self.num / other.num))
+
+    def make_order(self, n):
+        lst = ["*" for _ in range(self.num)]
+        s = ""
+        while lst:
+            for el in range(n):
+                if lst:
+                    s += lst.pop()
+                else:
+                    break
+            s += "\n"
+        return s
+
+
+c_1 = Cell(12)
+c_2 = Cell(5)
+c_div = c_1 / c_2
+print(c_div.num)
+c_sub = c_1 - c_2
+print(c_sub.num)
+c_mul = c_1 * c_2
+print(c_mul.num)
+c_add = c_1 + c_2
+print(c_add.num)
+print(c_1.make_order(5))
+
+c_sub = c_2 - c_1
+print(c_sub.num)
